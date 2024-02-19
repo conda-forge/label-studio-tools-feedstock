@@ -1,5 +1,5 @@
 {% set name = "label-studio-tools" %}
-{% set version = "0.0.2" %}
+{% set version = "0.0.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   - url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/label-studio-tools-{{ version }}.tar.gz
-    sha256: bc9635cf2027e130a7636fb1c710d2aacbf8114f4d8151677f28f1fc34597226
+    sha256: 2e31698f76293e0b5d83efa2b9bde60e6e6f0e96e58da482b1fc062a1bbfe4b6
   # See https://github.com/heartexlabs/label-studio-tools/pull/31
   - url: https://raw.githubusercontent.com/heartexlabs/label-studio-tools/{{ version }}/requirements.txt
     sha256: a0db321000bf1ff6fc6844988d5554a11b0951587c57eb457f7cc0a15acbff55
