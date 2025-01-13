@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  - url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/label-studio-tools-{{ version }}.tar.gz
+  - url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/label-studio-tools-{{ version }}.tar.gz
     sha256: 2dc0be89e5758bd2e880a658580fe75610cfc75ec12e50311b556720b18b3039
   # See https://github.com/heartexlabs/label-studio-tools/pull/31
   - url: https://raw.githubusercontent.com/heartexlabs/label-studio-tools/{{ version }}/requirements.txt
@@ -17,16 +17,16 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
   run:
     - appdirs >=1.4.3
     - lxml >=4.2.5
-    - python >=3.6
+    - python >={{ python_min }}
 
 test:
   imports:
@@ -35,6 +35,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/heartexlabs/label-studio-tools
